@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    p 
+        a(href='/projects/add') Dodaj projekt
+    ul
+        - each project, i in projects
+            li
+                = project.naziv
+                by&nbsp
+                = project.opis
+                by&nbsp
+                = project.cijena
+                by&nbsp
+                = project.obavljeni
+                by&nbsp
+                = project.pocetak
+                by&nbsp
+                = project.zavrsetak
+                by&nbsp
+                //-= project._id
+                by&nbsp
+                form(action='/projects/#{project._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Obrisi
+                p 
+                    a(href='/projects/#{project._id}/edit') Uredi
+                p
+                    a(href='/projects/#{project._id}') Detalji

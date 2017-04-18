@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	h1.
+		Project ID #{project._id}
+	form(action='/projects/#{project._id}/edit',method='post',name='updateproject',enctype='application/x-www-form-urlencoded')
+		p Naziv:
+			input#inputNaziv(type='text', value='#{project.naziv}', name='naziv')
+		p Opis:
+			input#inputOpis(type='text', value='#{project.opis}', name='opis')
+		p Cijena:
+			input#inputCijena(type='number', value='#{project.cijena}', name='cijena')
+		p Obavljeni:
+			input#inputObavljeni(type='checkbox', name='obavljeni', checked=('#{project.obavljeni}'==='true' ? "checked" : undefined))
+		p Pocetak:
+			input#inputPocetak(type='date', value='#{project.pocetak}', name='pocetak')
+		p Zavrsetak:
+			input#inputZavrsetak(type='date', value='#{project.zavrsetak}', name='zavrsetak')
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+			button#btnSubmit(type='submit').
+				Uredi

@@ -1,0 +1,20 @@
+{
+  "name": "lv6-crud",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "^1.15.2",
+    "jade": "*",
+    "method-override": "*",
+    "mongoose": "^4.9.5",
+    "morgan": "*",
+    "serve-favicon": "*"
+  }
+}

@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddProject(name="addproject",method="post",action="/projects")
+		p Naziv: 
+			input#inputNaziv(type="text", placeholder="naziv", name="naziv")
+		p Opis:
+			input#inputOpis(type="text", placeholder="opis", name="opis")
+		p Cijena: 
+			input#inputCijena(type="number", placeholder="opis", name="cijena")
+		p Obavljeno?: 
+			input#inputObavljeno(type="checkbox", name="obavljeno")
+		p Pocetak 
+			input#inputPocetak(type="date", name="pocetak")
+		p Zavrsetak
+			input#inputZavrsetak(type="date", name="zavrsetak")
+		p
+			button#btnSubmit(type="submit") submit
